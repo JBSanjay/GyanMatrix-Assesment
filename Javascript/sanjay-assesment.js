@@ -43,19 +43,20 @@ function display() {
     data.map(value => {
         console.log(value);
         detail += `
-        <div class="display">
+        <section class="display">
         <img src=${value.picture.large}>
         <span class="details">
         <p>Name:${value.name.title} ${value.name.first}</p>
         <p >Email:${value.email}</p>
         <p>Gender:${value.gender}</p>
         </span>
-        <div>`
+        <section>`
     });
     document.getElementById("fetch").innerHTML = detail;
 }
 
-function search() {
+function search(event) {
+    event.preventDefault()
     let value = document.getElementById("searchbars").value;
     let temp = " ";
     let storage = JSON.parse(localStorage.getItem("Staffinfo"));
@@ -99,4 +100,4 @@ function search() {
 //     locstorage.push(sdata);
 //     localStorage.setitem("Staffinfo", JSON.stringify(sdata));
 
-// }
+// }`
