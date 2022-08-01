@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.head-logo {
+    width: 10%;
+    height: 2%;
+}
+
+.head {
+    background-color: rgb(23, 153, 23);
+}
+
+.display {
+    display: flex;
+    width: 400px;
+    flex-wrap: wrap;
+}
+
+.details {
+    display: block;
+}
+
+@media s
