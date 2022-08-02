@@ -55,28 +55,46 @@ function display() {
     document.getElementById("fetch").innerHTML = detail;
 }
 
-function search(event) {
-    event.preventDefault()
-    let value = document.getElementById("searchbars").value;
-    let temp = " ";
-    let storage = JSON.parse(localStorage.getItem("Staffinfo"));
-    console.log(storage);
+function search = () => {
+    // event.preventDefault()
+    // let val = document.getElementById("searchbars").value;
 
-    let resvalue = storage.filter(obj => obj.name.first === value);
-    console.log(resvalue);
-    var detail2 = '';
-    for (var i = 0; i < resvalue.length; i++) {
-        detail2 = `
-            <div class="display">
-            <img src=${storage.picture.large}>
+    // let storage = JSON.parse(localStorage.getItem("Staffinfo"));
+    // console.log(storage);
+
+    // let resvalue = storage.filter((obj) => obj.name.first === val);
+    // console.log(resvalue);
+    // var detail2 = '';
+    // resvalue.map(function(obj) {
+    //     detail2 = `
+    //         <div class="display">
+    //         <img src=${value.picture.large}>
+    //         <span class="details">
+    //         <p>Name:${value.name.title} ${value.name.first}</p>
+    //         <p >Email:${value.email}</p>
+    //         <p>Gender:${value.gender}</p>
+    //         </span>
+    //        <div>`
+    // });
+
+    // console. charInfo = "";
+    let newdata = JSON.parse(localStorage.getItem("Staffinfo"));
+    let val = document.querySelector('.searchbars').value
+    let charInfo = "";
+    let data = newdata.filter((item) => item.name.first === val);
+    data.map(function(obj) {
+        charInfo += `
+        <div class="display">
+            <img src=${obj.value.picture.large}>
             <span class="details">
-            <p>Name:${storage.name.title} ${storage.name.first}</p>
-            <p >Email:${storage.email}</p>
-            <p>Gender:${storage.gender}</p>
+            <p>Name:${obj.name.title} ${value.name.first}</p>
+            <p >Email:${obj.email}</p>
+            <p>Gender:${obj.gender}</p>
             </span>
            <div>`
-    }
-    document.getElementById("search1").innerHTML = detail2;
+    });
+    console.log(charInfo);
+    document.getElementById("search1").innerHTML = charInfo;
     // temp = storage.foreach(myfunction);
     // myfunction();
 
